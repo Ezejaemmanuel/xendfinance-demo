@@ -10,7 +10,7 @@ export const fetchMarketData = async ({
 }) => {
   const [, coinId] = queryKey;
   const url = getBaseUrl(`api/market-cap?coinId=${coinId}`);
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     const errorData = await response.json();

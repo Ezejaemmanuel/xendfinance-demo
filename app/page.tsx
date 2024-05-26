@@ -5,6 +5,7 @@ import Statistics from "@/components/statistics";
 import NewChart from "@/components/chart";
 import { Suspense } from "react";
 import LoadingComponent from "@/components/loaderComponent";
+import Partners from "@/components/patners";
 export default async function Home() {
   // await checkAuth();
   return (
@@ -17,9 +18,11 @@ export default async function Home() {
       <Suspense fallback={<LoadingComponent className="h-24 " />}>
         <Statistics />
       </Suspense>
+
       <Suspense fallback={<LoadingComponent className="h-32 " />}>
         <NewChart />
       </Suspense>
+      <Partners />
     </>
   );
 }
