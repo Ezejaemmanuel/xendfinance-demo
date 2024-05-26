@@ -1,25 +1,26 @@
 import React from "react";
 import Image from "next/image";
+import { MotionDiv } from "./animateOnEnter";
 
 const Partners: React.FC = () => {
   const partners = [
     {
       src: "https://xend.finance/icons/haskey.svg",
       alt: "Haskey",
-      width: 400,
-      height: 300,
+      width: 300,
+      height: 200,
     },
     {
       src: "https://xend.finance/icons/google-launchpad-3.svg",
       alt: "Google Launchpad",
-      width: 400,
-      height: 300,
+      width: 300,
+      height: 200,
     },
     {
       src: "https://xend.finance/icons/binance.png",
       alt: "Binance",
-      width: 400,
-      height: 300,
+      width: 300,
+      height: 200,
     },
   ];
 
@@ -30,14 +31,16 @@ const Partners: React.FC = () => {
       </h1>
       <div className="flex flex-wrap items-center justify-center space-x-4 space-y-4">
         {partners.map((partner, index) => (
-          <Image
-            key={index}
-            src={partner.src}
-            alt={partner.alt}
-            width={partner.width}
-            height={partner.height}
-            className="rounded-md bg-white object-contain"
-          />
+          <MotionDiv delay={0.5 * index} duration={1} key={index}>
+            <Image
+              key={index}
+              src={partner.src}
+              alt={partner.alt}
+              width={partner.width}
+              height={partner.height}
+              className="rounded-md bg-white object-contain"
+            />
+          </MotionDiv>
         ))}
       </div>
     </div>
