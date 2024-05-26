@@ -1,82 +1,9 @@
-// "use client";
-// import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
-// import CountUp from "./countup";
-
-// const data = [
-//   {
-//     number: 2534023452,
-//     label: "Fee paying accounts, all time",
-//     color: "#bd1e59",
-//   },
-//   { number: 303427891221, label: "NFTs minted", color: "#00d8ff" },
-//   {
-//     number: 332917819821,
-//     label: "Median fee per transaction",
-//     color: "#00ff89",
-//   },
-// ];
-
-// export default function Statistics() {
-//   return (
-//     <Card className="bg-[#000000] py-6 flex flex-col md:flex-row text-white">
-//       <CardHeader className="mb-4">
-//         <CardTitle className="text-4xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-//           Join a community of millions.
-//         </CardTitle>
-//       </CardHeader>
-//       <CardContent className="flex flex-col gap-10">
-//         {data.map((item, index) => (
-//           <NumberDisplay
-//             key={index}
-//             number={item.number}
-//             label={item.label}
-//             color={item.color}
-//             index={index}
-//           />
-//         ))}
-//       </CardContent>
-//     </Card>
-//   );
-// }
-
-// interface NumberDisplayProps {
-//   number: number;
-//   label: string;
-//   color: string;
-//   index: number;
-// }
-
-// const NumberDisplay: React.FC<NumberDisplayProps> = ({
-//   number,
-//   label,
-//   index,
-//   color,
-// }) => {
-//   // Extract numeric value from the string for CountUp
-
-//   return (
-//     <div className="space-y-2">
-//       <div className={`text-3xl md:text-6xl font-bold`} style={{ color }}>
-//         <CountUp
-//           end={number}
-//           duration={3 * index * 1.5}
-//           enableScrollSpy
-//           scrollSpyDelay={100}
-//           className=""
-//         />
-//       </div>
-//       <div className="text-sm uppercase" style={{ color }}>
-//         {label}
-//       </div>
-//     </div>
-//   );
-// };
-
 "use client";
 import React from "react";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import { useMarketData } from "@/lib/hooks/useFetchMarketData";
 import CountUp from "./countup-2";
+import Image from "next/image";
 
 interface MarketData {
   prices: [number, number][];
@@ -118,8 +45,8 @@ export default function Statistics() {
       color: "#00ff89",
       prefix: "$RWA",
       prefixStyle: "text-xl",
-      spanClassName: "text-3xl md:text-5xl",
-      decimalPlaces: 10,
+      spanClassName: "text-4xl md:text-6xl",
+      decimalPlaces: 5,
     },
     {
       number: latestData.latestPrice,
@@ -127,8 +54,8 @@ export default function Statistics() {
       color: "#bd1e59",
       prefix: "$",
       prefixStyle: "text-xl",
-      spanClassName: "text-3xl md:text-5xl",
-      decimalPlaces: 10,
+      spanClassName: "text-4xl md:text-6xl",
+      decimalPlaces: 5,
     },
     {
       number: latestData.latestMarketCap,
@@ -136,19 +63,14 @@ export default function Statistics() {
       color: "#00d8ff",
       prefix: "$",
       prefixStyle: "text-xl",
-      spanClassName: "text-3xl md:text-5xl",
-      decimalPlaces: 10,
+      spanClassName: "text-4xl md:text-6xl",
+      decimalPlaces: 5,
     },
   ];
 
   return (
-    <Card className="flex flex-col bg-[#000000] py-6 text-white md:flex-row">
-      <CardHeader className="mb-4">
-        <CardTitle className="text-4xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-          Join a community of millions.
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-10">
+    <Card className="mx-auto  flex w-full  items-center justify-center space-y-4 bg-[#000000] py-6 text-white md:mb-10 ">
+      <CardContent className="flex flex-col items-center   justify-between gap-10 md:flex-row md:gap-0 ">
         {statisticsData.map((item, index) => (
           <NumberDisplay
             key={index}
@@ -166,6 +88,25 @@ export default function Statistics() {
     </Card>
   );
 }
+
+// const BackgroundText: React.FC = () => {
+//   return (
+//     <div className="relative flex h-full items-center justify-center bg-neutral-950 md:w-[40%]">
+//       <div className="absolute inset-0 h-full w-full opacity-50">
+//         <Image
+//           src="/futuristic-coin.jpeg"
+//           alt="Background"
+//           quality={75}
+//           fill={true}
+//           className="object-cover"
+//         />
+//       </div>
+//       <div className="absolute bottom-4 right-4 text-right text-4xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
+//         Join a community of millions.
+//       </div>
+//     </div>
+//   );
+// };
 
 interface NumberDisplayProps {
   number: number;
@@ -193,7 +134,7 @@ const NumberDisplay: React.FC<NumberDisplayProps> = ({
       <div className={`text-3xl font-bold md:text-6xl`} style={{ color }}>
         <CountUp
           end={number}
-          duration={index + 3 * 3 * 1.5}
+          duration={3}
           enableScrollSpy={true}
           prefix={prefix}
           prefixStyle={prefixStyle}

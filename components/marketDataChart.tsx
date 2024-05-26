@@ -161,10 +161,11 @@ const MarketDataChart: React.FC<MarketDataChartProps> = ({ coinId }) => {
     })) || [];
 
   // If the screen width is defined and less than 768px, show only half of the data
+  // Show only the second half of the data on small screens
   if (width && width < 768) {
-    chartData = chartData.slice(0, Math.ceil(chartData.length / 2));
+    const startIndex = Math.floor(chartData.length / 2); // Start from the middle
+    chartData = chartData.slice(startIndex);
   }
-
   return (
     <ResponsiveContainer width="100%" height={500}>
       <AreaChart data={chartData}>

@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Providers } from "./tenstack-provider";
 import ReactGeiger from "./geiger";
 import Navbar from "@/components/newNavBar";
+import ProvidersProgressBar from "./progressBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -30,11 +31,13 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Providers>
-              <main className="">
-                <Navbar />
-                <div className="mb-10 md:mb-0">{children}</div>
-                <Toaster richColors duration={10000} />
-              </main>
+              <ProvidersProgressBar>
+                <main className="">
+                  <Navbar />
+                  <div className="mb-10 md:mb-0">{children}</div>
+                  <Toaster richColors duration={10000} />
+                </main>
+              </ProvidersProgressBar>
             </Providers>
 
             <Toaster richColors />

@@ -7,6 +7,8 @@ import { Suspense } from "react";
 import LoadingComponent from "@/components/loaderComponent";
 import Partners from "@/components/patners";
 import Coin from "@/components/coin/aside";
+import GlassmorphismComponent from "@/components/callToAction";
+import Grid from "@/components/grid";
 export default async function Home() {
   // await checkAuth();
   return (
@@ -24,6 +26,8 @@ export default async function Home() {
         <NewChart />
       </Suspense>
       <Partners />
+      <GlassmorphismComponent />
+      {/* <Grid /> */}
     </>
   );
 }

@@ -25,7 +25,7 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <div className="bg-neutral-900 p-4">
+    <div className="bg-neutral-950 p-4">
       <h1 className="mb-8 scroll-m-20 text-center text-2xl font-extrabold  tracking-tight md:text-4xl">
         Our Top <span className="text-orange-500">Investors</span>
       </h1>
