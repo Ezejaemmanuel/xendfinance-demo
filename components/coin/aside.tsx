@@ -14,10 +14,10 @@ const Coin: React.FC<CoinProps> = ({ coinId }) => {
     queryKey: ["coinData", coinId],
     queryFn: fetchCoinData,
   });
-
+  console.log(data);
   console.log(
     `Query status - isLoading: ${isLoading}, error: ${error}, data:`,
-    data
+    data,
   );
 
   if (isLoading)
@@ -30,7 +30,7 @@ const Coin: React.FC<CoinProps> = ({ coinId }) => {
     );
 
   return (
-    <div className="p-4 bg-gray-800 text-white shadow rounded">
+    <div className="rounded bg-gray-800 p-4 text-white shadow">
       <h1 className="text-2xl font-bold">{data.name}</h1>
       <p>Symbol: {data.symbol}</p>
       <p>Web Slug: {data.web_slug}</p>

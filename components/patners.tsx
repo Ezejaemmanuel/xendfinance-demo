@@ -24,11 +24,11 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <div className="p-4 bg-neutral-900">
-      <h1 className="text-2xl scroll-m-20 font-extrabold tracking-tight md:text-4xl  text-center mb-8">
+    <div className="bg-neutral-900 p-4">
+      <h1 className="mb-8 scroll-m-20 text-center text-2xl font-extrabold  tracking-tight md:text-4xl">
         Our Top <span className="text-orange-500">Investors</span>
       </h1>
-      <div className="flex flex-wrap justify-center space-x-4">
+      <div className="flex flex-wrap items-center justify-center space-x-4 space-y-4">
         {partners.map((partner, index) => (
           <Image
             key={index}
@@ -36,7 +36,7 @@ const Partners: React.FC = () => {
             alt={partner.alt}
             width={partner.width}
             height={partner.height}
-            className="object-contain bg-white dark:bg-neutral-800"
+            className="rounded-md bg-white object-contain"
           />
         ))}
       </div>

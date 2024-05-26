@@ -18,9 +18,8 @@ export const fetchCoinData = async ({
       method: "GET",
       headers: {
         accept: "application/json",
-        //   "x-cg-pro-api-key": API_KEY || "",
       },
-    }
+    },
   );
   console.log(`Response status: ${response.status}`);
 
