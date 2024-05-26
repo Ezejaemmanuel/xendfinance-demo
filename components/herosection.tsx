@@ -7,11 +7,11 @@ import LoadingComponent from "./loaderComponent";
 const HeroSection = () => {
   return (
     <div className="relative flex flex-col overflow-hidden items-center mt-3 lg:mt-10">
-      <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10">
+      {/* <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10">
         <Suspense>
           <World />
         </Suspense>
-      </div>
+      </div> */}
       {/* <div className="absolute top-0 left-1/2 w-64 h-64 bg-[radial-gradient(circle,_rgba(255,0,150,0.5),_rgba(0,204,255,0.5))] rounded-full"></div> */}
       <Suspense>
         <Meteors number={30} />
