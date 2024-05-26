@@ -130,14 +130,14 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
 }) => {
   if (active && payload && payload.length && label) {
     return (
-      <div className="tooltip bg-white p-3 rounded shadow-lg text-green-500">
+      <div className="tooltip rounded bg-white p-3 text-green-500 shadow-lg">
         <h4 className="text-sm font-bold">
           {format(new Date(label), "eeee, d MMM, yyyy, HH:mm")}
         </h4>
-        <p className="text-sm mt-2 text-green-400">
+        <p className="mt-2 text-sm text-green-400">
           ${payload[0].value.toFixed(5)}
         </p>
-        <p className="text-sm mt-2 text-red-500">
+        <p className="mt-2 text-sm text-red-500">
           {formatDistanceToNow(new Date(label))}
         </p>
       </div>
@@ -154,8 +154,6 @@ const MarketDataChart: React.FC<MarketDataChartProps> = ({ coinId }) => {
   const { data } = useMarketData(coinId);
   const { width } = useWindowSize();
 
-  console.log("Fetched data:", data);
-
   let chartData =
     data?.prices.map(([timestamp, price]) => ({
       date: new Date(timestamp),
@@ -166,8 +164,6 @@ const MarketDataChart: React.FC<MarketDataChartProps> = ({ coinId }) => {
   if (width && width < 768) {
     chartData = chartData.slice(0, Math.ceil(chartData.length / 2));
   }
-
-  console.log("Formatted chart data:", chartData);
 
   return (
     <ResponsiveContainer width="100%" height={500}>

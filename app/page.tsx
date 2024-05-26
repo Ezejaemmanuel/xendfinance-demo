@@ -16,11 +16,11 @@ export default async function Home() {
         <HeroSection />
       </div>
       <MarqueeDemo />
-      <Suspense fallback={<LoadingComponent className="h-24 " />}>
+      <Suspense fallback={<LoadingComponent className="h-[90dvh] " />}>
         <Statistics />
       </Suspense>
 
-      <Suspense fallback={<LoadingComponent className="h-32 " />}>
+      <Suspense fallback={<LoadingComponent className="h-[90dvh]" />}>
         <NewChart />
       </Suspense>
       <Partners />
