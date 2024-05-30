@@ -34,7 +34,7 @@ export default function RootLayout({
               <ProvidersProgressBar>
                 <main className="">
                   <Navbar />
-                  <div className="mb-10 md:mb-0">{children}</div>
+                  <div className="mb-10 bg-black md:mb-0">{children}</div>
                   <Toaster richColors duration={10000} />
                 </main>
               </ProvidersProgressBar>

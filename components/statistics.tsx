@@ -20,8 +20,7 @@ interface LatestMarketData {
 const extractLatestMarketData = (data: MarketData): LatestMarketData => {
   const latestPriceEntry = data.prices[data.prices.length - 1];
   const latestMarketCapEntry = data.market_caps[data.market_caps.length - 1];
-  const latestTotalVolumeEntry =
-    data.total_volumes[data.total_volumes.length - 1];
+  const latestTotalVolumeEntry = data.total_volumes[data.total_volumes.length - 1];
 
   const latestPrice = latestPriceEntry[1];
   const latestMarketCap = latestMarketCapEntry[1];
@@ -34,6 +33,14 @@ const extractLatestMarketData = (data: MarketData): LatestMarketData => {
   };
 };
 
+const calculateFontSize = (number: number): string => {
+  const length = number.toString().length;
+  if (length <= 4) return "text-6xl md:text-8xl";
+  if (length <= 7) return "text-5xl md:text-7xl";
+  if (length <= 10) return "text-4xl md:text-6xl";
+  return "text-3xl md:text-5xl";
+};
+
 export default function Statistics() {
   const { data } = useMarketData("rwa-finance"); // Replace "coinId" with the actual coin ID
   const latestData = extractLatestMarketData(data);
@@ -44,69 +51,43 @@ export default function Statistics() {
       label: "Latest Total Volume",
       color: "#00ff89",
       prefix: "$RWA",
-      prefixStyle: "text-xl",
-      spanClassName: "text-4xl md:text-6xl",
-      decimalPlaces: 5,
     },
     {
       number: latestData.latestPrice,
       label: "Price Per Token",
       color: "#bd1e59",
       prefix: "$",
-      prefixStyle: "text-xl",
-      spanClassName: "text-4xl md:text-6xl",
-      decimalPlaces: 5,
     },
     {
-      number: latestData.latestMarketCap,
+      number: 432093489,
       label: "Latest Market Cap",
       color: "#00d8ff",
       prefix: "$",
-      prefixStyle: "text-xl",
-      spanClassName: "text-4xl md:text-6xl",
-      decimalPlaces: 5,
     },
   ];
 
   return (
-    <Card className="mx-auto  flex w-full  items-center justify-center space-y-4 bg-[#000000] py-6 text-white md:mb-10 ">
-      <CardContent className="flex flex-col items-center   justify-between gap-10 md:flex-row md:gap-0 ">
-        {statisticsData.map((item, index) => (
-          <NumberDisplay
-            key={index}
-            prefix={item.prefix}
-            number={item.number}
-            label={item.label}
-            color={item.color}
-            prefixStyle={item.prefixStyle}
-            index={index}
-            spanClassName={item.spanClassName}
-            decimalPlaces={item.decimalPlaces}
-          />
-        ))}
+    <Card className=" flex w-full items-center justify-center space-y-4 w bg-neutral-950 py-6 text-white md:mb-10">
+      <CardContent className="flex flex-col items-center justify-between gap-4 md:gap-20">
+        <div className="flex flex-col items-center ">
+          <div className="text-2xl font-bold md:text-4xl">About Xend</div>
+        </div>
+        <div className="flex flex-col items-center md:text-left gap-4 md:gap-10 justify-between">
+          {statisticsData.map((item, index) => (
+            <NumberDisplay
+              key={index}
+              prefix={item.prefix}
+              number={item.number}
+              label={item.label}
+              color={item.color}
+              index={index}
+            />
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
 }
-
-// const BackgroundText: React.FC = () => {
-//   return (
-//     <div className="relative flex h-full items-center justify-center bg-neutral-950 md:w-[40%]">
-//       <div className="absolute inset-0 h-full w-full opacity-50">
-//         <Image
-//           src="/futuristic-coin.jpeg"
-//           alt="Background"
-//           quality={75}
-//           fill={true}
-//           className="object-cover"
-//         />
-//       </div>
-//       <div className="absolute bottom-4 right-4 text-right text-4xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-//         Join a community of millions.
-//       </div>
-//     </div>
-//   );
-// };
 
 interface NumberDisplayProps {
   number: number;
@@ -114,9 +95,6 @@ interface NumberDisplayProps {
   color: string;
   index: number;
   prefix: string;
-  prefixStyle: string;
-  decimalPlaces?: number;
-  spanClassName?: string;
 }
 
 const NumberDisplay: React.FC<NumberDisplayProps> = ({
@@ -125,23 +103,21 @@ const NumberDisplay: React.FC<NumberDisplayProps> = ({
   index,
   color,
   prefix,
-  prefixStyle,
-  decimalPlaces,
-  spanClassName,
 }) => {
+  const fontSizeClass = calculateFontSize(number);
+
   return (
-    <div className="space-y-2">
-      <div className={`text-3xl font-bold md:text-6xl`} style={{ color }}>
+    <div className="space-y-2 text-center ">
+      <div className={`font-bold ${fontSizeClass}`} style={{ color }}>
         <CountUp
           end={number}
           duration={3}
           enableScrollSpy={true}
+          className="s"
+          decimalPlaces={4}
+          prefixStyle="text-xl"
           prefix={prefix}
-          prefixStyle={prefixStyle}
           scrollSpyDelay={100}
-          className=""
-          spanClassName={spanClassName}
-          decimalPlaces={decimalPlaces}
         />
       </div>
       <div className="text-sm uppercase" style={{ color }}>

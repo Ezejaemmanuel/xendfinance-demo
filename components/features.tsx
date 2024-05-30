@@ -1,106 +1,177 @@
-// Adjusted imports based on available icons
+// import React from "react";
+// import {
+//   FiGlobe,
+//   FiCreditCard,
+//   FiShield,
+//   FiDollarSign,
+//   FiPercent,
+//   FiBriefcase,
+//   FiCpu,
+// } from "react-icons/fi";
+// import { NeonGradientCard } from "./magicui/neon-gradient";
+// import { MotionDiv } from "./animateOnEnter";
+
+// const features = [
+//   {
+//     title: "Real-world Assets",
+//     description: "Invest in real-world assets like stocks, real estate, etc.",
+//     IconComponent: FiBriefcase,
+//   },
+//   {
+//     title: "A Global Access",
+//     description: "Unrestricted membership from around the world.",
+//     IconComponent: FiGlobe,
+//   },
+//   {
+//     title: "Flexible Loans",
+//     description: "Access to loans with flexible repayment and terms.",
+//     IconComponent: FiCreditCard,
+//   },
+//   {
+//     title: "Insurance",
+//     description: "Decentralized insurance to protect assets and investments.",
+//     IconComponent: FiShield,
+//   },
+//   {
+//     title: "Save in Stable Currencies",
+//     description: "Fluctuating and devalued currency is a worry of the past.",
+//     IconComponent: FiDollarSign,
+//   },
+//   {
+//     title: "Earn Interest and Tokens",
+//     description:
+//       "Our secure savings earn multiple levels of interest and benefits.",
+//     IconComponent: FiBriefcase,
+//   },
+//   {
+//     title: "High Interest Rates",
+//     description: "Up to 15% APY. Traditional interest rates offer 1 – 2% APY.",
+//     IconComponent: FiPercent,
+//   },
+//   {
+//     title: "XEND-AI",
+//     description: "Get real-time AI assistance for smart investment decisions.",
+//     IconComponent: FiCpu,
+//   },
+// ];
+
+// interface FeatureProps {
+//   title: string;
+//   description: string;
+//   IconComponent?: React.ComponentType<any>;
+// }
+
+// const Feature: React.FC<FeatureProps> = ({
+//   title,
+//   description,
+//   IconComponent,
+// }) => (
+//   <div className="flex flex-col items-center p-4 bg-neutral-950 text-white rounded-lg shadow-lg">
+//     {IconComponent && <IconComponent size={32} className="text-blue-500" />}
+//     <h3 className="mt-2 text-lg font-semibold">{title}</h3>
+//     <p className="mt-1 text-sm text-center">{description}</p>
+//   </div>
+// );
+
+// const FeaturesSection: React.FC = () => (
+//   <section className="py-12 bg-black">
+//     <div className="container mx-auto text-center">
+//       <h2 className="text-3xl font-bold text-white">Features</h2>
+//       <p className="mt-4 text-lg text-gray-300">
+//         Every tool you need to optimize your savings and investment potential
+//       </p>
+//       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+//         {features.map((feature, index) => (
+//           <MotionDiv key={index} delay={index * 0.4}>
+//             <Feature  {...feature} />
+//             </MotionDiv>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
+
+// export defaul;t FeaturesSection;
+"use client";
+import React from "react";
 import {
   FiGlobe,
   FiCreditCard,
   FiShield,
   FiDollarSign,
-  FiBank,
   FiPercent,
-  FiRocket,
+  FiBriefcase,
+  FiCpu,
 } from "react-icons/fi";
+import { HoverEffect } from "./magicui/cardHover";
+import { MultiDirectionSlide } from "./magicui/multi-direction";
 
-const features = [
+const featureItems = [
   {
     title: "Real-world Assets",
     description: "Invest in real-world assets like stocks, real estate, etc.",
-    imageSrc: "/icons/assets/real-world-assets.svg",
-    IconComponent: FiRocket, // Using Rocket as a substitute for Real Estate
+    link: "/real-world-assets",
+    IconComponent: FiBriefcase,
   },
   {
     title: "A Global Access",
     description: "Unrestricted membership from around the world.",
-    imageSrc: "/icons/assets/global.svg",
+    link: "/global-access",
     IconComponent: FiGlobe,
   },
   {
     title: "Flexible Loans",
     description: "Access to loans with flexible repayment and terms.",
-    imageSrc: "/icons/assets/flexible.svg",
+    link: "/flexible-loans",
     IconComponent: FiCreditCard,
   },
   {
     title: "Insurance",
     description: "Decentralized insurance to protect assets and investments.",
-    imageSrc: "/icons/assets/insurance.svg",
+    link: "/insurance",
     IconComponent: FiShield,
   },
   {
     title: "Save in Stable Currencies",
     description: "Fluctuating and devalued currency is a worry of the past.",
-    imageSrc: "/icons/assets/stable.svg",
+    link: "/stable-currencies",
     IconComponent: FiDollarSign,
   },
   {
     title: "Earn Interest and Tokens",
     description:
       "Our secure savings earn multiple levels of interest and benefits.",
-    imageSrc: "/icons/assets/earn.svg",
-    IconComponent: FiBank, // Keeping FiBank as it seems to fit well here
+    link: "/earn-interest",
+    IconComponent: FiBriefcase,
   },
   {
     title: "High Interest Rates",
-    description: "Up to 15% APY. Traditional interest rates offer 1 – 2% APY",
-    imageSrc: "/icons/assets/high-interest.svg",
+    description: "Up to 15% APY. Traditional interest rates offer 1 – 2% APY.",
+    link: "/high-interest-rates",
     IconComponent: FiPercent,
   },
   {
     title: "XEND-AI",
-    description: "Get real-time AI assistance for smart investment decisions",
-    imageSrc: "/icons/assets/xend-ai.svg",
-    IconComponent: FiRocket, // Reusing Rocket for AI-related services
+    description: "Get real-time AI assistance for smart investment decisions.",
+    link: "/xend-ai",
+    IconComponent: FiCpu,
   },
 ];
 
-// Make sure to import the correct icons from react-icons
-// For example:
-// import { FiRealEstate, FiGlobe, FiCreditCard, FiShield, FiDollarSign, FiBank, FiPercent, FiRobot } from 'react-icons/fi';
-// Import necessary libraries and components
-import React from "react";
-import Image from "next/image";
-
-interface FeatureProps {
-  title: string;
-  description: string;
-  imageSrc: string;
-  IconComponent?: React.ComponentType<any>; // Optional because not all features may have an icon
-}
-
-const Feature: React.FC<FeatureProps> = ({
-  title,
-  description,
-  imageSrc,
-  IconComponent,
-}) => (
-  <div className="flex flex-col items-center p-4">
-    {IconComponent && <IconComponent size={32} />}
-    <Image src={imageSrc} alt={title} width={64} height={64} />
-    <h3 className="mt-2 text-lg font-semibold">{title}</h3>
-    <p className="mt-1 text-sm">{description}</p>
-  </div>
-);
-
-const FeaturesSection: React.FC = () => (
-  <section className="step-3">
-    <h2 className="topic-3">Features</h2>
-    <p className="optimize">
-      Every tool you need to optimize your savings and Investment potential
-    </p>
-    <div className="feat-box space-y-4 md:space-y-8">
-      {features.map((feature, index) => (
-        <Feature key={index} {...feature} />
-      ))}
+const App = () => {
+  return (
+    <div>
+      <MultiDirectionSlide
+        text1={"Features"}
+        text2={
+          "Every tool you need to optimize your savings and Investment potential"
+        }
+        className1="font-bold text-4xl md:text-6xl"
+        className2="text-sm md:text-xl"
+      />
+      <HoverEffect items={featureItems} className="your-custom-class" />
     </div>
-  </section>
-);
+  );
+};
 
-export default FeaturesSection;
+export default App;
