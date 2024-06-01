@@ -94,67 +94,69 @@
 // export defaul;t FeaturesSection;
 "use client";
 import React from "react";
-import {
-  FiGlobe,
-  FiCreditCard,
-  FiShield,
-  FiDollarSign,
-  FiPercent,
-  FiBriefcase,
-  FiCpu,
-} from "react-icons/fi";
+
 import { HoverEffect } from "./magicui/cardHover";
 import { MultiDirectionSlide } from "./magicui/multi-direction";
+
+import {
+  FaBriefcase,
+  FaGlobe,
+  FaCreditCard,
+  FaShieldAlt,
+  FaDollarSign,
+  FaPercentage,
+  FaMicrochip,
+} from "react-icons/fa";
 
 const featureItems = [
   {
     title: "Real-world Assets",
     description: "Invest in real-world assets like stocks, real estate, etc.",
     link: "/real-world-assets",
-    IconComponent: FiBriefcase,
+    IconComponent: FaBriefcase,
   },
   {
     title: "A Global Access",
     description: "Unrestricted membership from around the world.",
     link: "/global-access",
-    IconComponent: FiGlobe,
+    IconComponent: FaGlobe,
   },
   {
     title: "Flexible Loans",
     description: "Access to loans with flexible repayment and terms.",
     link: "/flexible-loans",
-    IconComponent: FiCreditCard,
+    IconComponent: FaCreditCard,
   },
   {
     title: "Insurance",
     description: "Decentralized insurance to protect assets and investments.",
     link: "/insurance",
-    IconComponent: FiShield,
+    IconComponent: FaShieldAlt,
   },
   {
     title: "Save in Stable Currencies",
     description: "Fluctuating and devalued currency is a worry of the past.",
     link: "/stable-currencies",
-    IconComponent: FiDollarSign,
+    IconComponent: FaDollarSign,
   },
   {
     title: "Earn Interest and Tokens",
     description:
       "Our secure savings earn multiple levels of interest and benefits.",
     link: "/earn-interest",
-    IconComponent: FiBriefcase,
+    IconComponent: FaBriefcase,
   },
   {
     title: "High Interest Rates",
     description: "Up to 15% APY. Traditional interest rates offer 1 – 2% APY.",
     link: "/high-interest-rates",
-    IconComponent: FiPercent,
+    IconComponent: FaPercentage,
   },
   {
     title: "XEND-AI",
     description: "Get real-time AI assistance for smart investment decisions.",
     link: "/xend-ai",
-    IconComponent: FiCpu,
+    IconComponent: FaMicrochip,
   },
 ];
 

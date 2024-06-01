@@ -12,8 +12,8 @@ const MobileApp: React.FC = ({}) => {
       id="mobileApp"
       className="body-font relative flex max-h-[98dvh] min-h-[95dvh] max-w-[100dvw]  flex-col items-center justify-center  px-8 text-gray-600  md:max-w-[70dvw]"
     >
-      <LargeNumber number={1} />
-      <h1 className=" absolute top-[99%] bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text  text-4xl  font-extrabold text-transparent md:relative md:text-6xl">
+      <LargeNumber className={"mr-4 mt-4"} number={1} />
+      <h1 className=" absolute top-[99%] hidden bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-4xl  font-extrabold  text-transparent md:relative md:block md:text-6xl">
         OUR MOBILE APP
       </h1>
 
@@ -21,7 +21,7 @@ const MobileApp: React.FC = ({}) => {
         className={`"md:flex-row  container mx-auto flex  flex-col  items-center   px-5 md:flex-row`}
       >
         <div className="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24">
-          <h1 className="title-font mb-4 text-3xl font-medium text-gray-900 dark:text-white sm:text-4xl">
+          <h1 className="title-font mb-4 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-green-200 via-rose-500 to-black  bg-clip-text text-3xl font-medium text-transparent sm:text-4xl">
             Download Our Mobile App
             <br className="hidden lg:inline-block" />
           </h1>

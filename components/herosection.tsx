@@ -66,12 +66,12 @@ const HeroSection = () => {
             Get Started
           </ShineBorder>
         </Link>
-        <a
-          href="#"
-          className="mx-3 rounded-md bg-gradient-to-r from-orange-500 to-red-800 px-4 py-3 text-white"
+        <Link
+          href="/products"
+          className="mx-3 rounded-md bg-gradient-to-r from-orange-500 to-red-800 px-2 py-2 text-xs text-white"
         >
-          Learn More
-        </a>
+          Explore Products
+        </Link>
         {/* <a
           href="/getStarted"
           className="mx-3 rounded-md border border-orange-500 px-4 py-3 text-green-500"

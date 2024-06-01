@@ -2,7 +2,12 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useState, useRef, useEffect, memo, SetStateAction } from "react";
 import { BiLogoTypescript } from "react-icons/bi";
-import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import {
+  nord,
+  a11yDark,
+  arta,
+  docco,
+} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { motion, useAnimate, useInView } from "framer-motion";
 
 const FeaturesDemo = () => {
@@ -42,27 +47,27 @@ const FeaturesDemo = () => {
   const features = [
     {
       title: "Initialize SDK",
-      text: "Set up the Xend Finance SDK with your secret, network, and mnemonic.",
+      text: "Set up the SDK ",
       icon: "path/to/sdk-icon.svg",
     },
     {
       title: "Create Wallet",
-      text: "Create a new wallet with a password.",
+      text: "Create a new wallet ",
       icon: "path/to/wallet-icon.svg",
     },
     {
       title: "Get Wallet Balance",
-      text: "Retrieve the balance of a wallet.",
+      text: "Retrieve wallet balance",
       icon: "path/to/balance-icon.svg",
     },
     {
       title: "Deposit Funds",
-      text: "Deposit funds into a wallet.",
+      text: "Deposit into a wallet.",
       icon: "path/to/deposit-icon.svg",
     },
     {
       title: "Withdraw Funds",
-      text: "Withdraw funds from a wallet.",
+      text: "Withdraw from a wallet.",
       icon: "path/to/withdraw-icon.svg",
     },
   ];
@@ -208,7 +213,7 @@ const FeatureElement = ({
       >
         <div>
           <h3
-            className={`text-xs  md:text-lg md:font-bold ${isSelected ? "text-red-500" : "text-white"}`}
+            className={`md:text-md  text-xs md:font-bold ${isSelected ? "text-red-500" : "text-white"}`}
           >
             {title}
           </h3>
@@ -304,7 +309,7 @@ const CustomInner = ({
       <div className="px-4 py-2">
         <SyntaxHighlighter
           language="typescript"
-          style={nord}
+          style={a11yDark}
           customStyle={{ background: "transparent", padding: 0, margin: 0 }}
         >
           {codeString}
