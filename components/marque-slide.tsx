@@ -30,7 +30,7 @@ const insuranceData = [
 
 const MarqueeDemo = () => {
   return (
-    <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background py-20 md:shadow-xl">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-[#0A090D]  py-20 md:shadow-xl">
       <Marquee pauseOnHover className="[--duration:20s]">
         {insuranceData.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -63,11 +63,11 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ img, text, link }) => {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden h-32 rounded-xl border p-4",
+        "relative h-32 w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950 bg-orange-500 hover:bg-neutral-950",
         // dark styles
-        "dark:border-orange-50 dark:bg-orange-300 dark:hover:bg-orange-50"
+        "dark:border-orange-50 dark:bg-orange-300 dark:hover:bg-orange-50",
       )}
     >
       <div className="flex flex-col items-center gap-2">

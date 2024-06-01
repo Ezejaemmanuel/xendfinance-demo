@@ -13,7 +13,7 @@ export const responsiveData = [
     title: "$XEND To $RWA Migration",
     description:
       "Migration to real-world assets staking is live. Transition your $XEND tokens to participate in our robust staking program, allowing you to earn returns backed by tangible assets. Get started now and join the future of decentralized finance.",
-    imageUrl: "/data-2.jpeg",
+    // imageUrl: "/data-2.jpeg",
 
     buttonText: "Get Started",
     buttonLink: "/get-started",
@@ -36,7 +36,7 @@ export const responsiveData = [
     description:
       "Unrestricted membership from around the world. Xend Finance offers a global platform where anyone can join and benefit from decentralized financial services, regardless of geographical boundaries. Our inclusive approach ensures equal opportunities for all members.",
     buttonText: "Join Us",
-    imageUrl: "/data-4.jpeg",
+    // imageUrl: "/data-4.jpeg",
 
     buttonLink: "/join",
     email: "join@xend.finance",
@@ -45,7 +45,7 @@ export const responsiveData = [
     title: "Flexible Loans",
     description:
       "Access to loans with flexible repayment terms. Our loan offerings are designed to meet the needs of a diverse range of users, providing financial flexibility with terms that can be tailored to your specific situation. Whether you need short-term or long-term financing, we've got you covered.",
-    imageUrl: "/data-5.jpeg",
+    // imageUrl: "/data-5.jpeg",
 
     buttonText: "Apply Now",
     buttonLink: "/apply",
@@ -68,7 +68,7 @@ export const responsiveData = [
     description:
       "Fluctuating and devalued currency is a worry of the past. Save in stable currencies and protect your savings from inflation and currency depreciation. Our platform provides access to stable, reliable financial instruments that preserve the value of your assets over time.",
     buttonText: "Save Now",
-    imageUrl: "/data-7.jpeg",
+    // imageUrl: "/data-7.jpeg",
 
     buttonLink: "/save",
     email: "save@xend.finance",
@@ -90,7 +90,7 @@ export const responsiveData = [
     description:
       "Up to 15% APY. Traditional interest rates offer 1-2% APY. Compare our high-yield savings options and see how much more you can earn. Our competitive rates are designed to help you maximize your returns and grow your wealth faster than conventional financial products.",
     buttonText: "Compare Rates",
-    imageUrl: "/data-9.jpeg",
+    // imageUrl: "/data-9.jpeg",
 
     buttonLink: "/rates",
     email: "rates@xend.finance",

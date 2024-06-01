@@ -83,8 +83,10 @@ const Feature: React.FC<FeatureProps> = ({
   description,
   IconComponent,
 }) => (
-  <div className="flex flex-col items-center rounded-lg bg-neutral-950 p-4 text-white shadow-lg">
-    {IconComponent && <IconComponent size={32} className="text-blue-500" />}
+  <div className="flex flex-col items-center rounded-lg bg-neutral-950 p-8 px-6 text-white shadow-lg md:p-4">
+    {IconComponent && (
+      <IconComponent size={32} className="animate-bounce text-blue-900" />
+    )}
     <h3 className="mt-2 text-lg font-semibold">{title}</h3>
     <p className="mt-1 text-center text-sm">{description}</p>
   </div>

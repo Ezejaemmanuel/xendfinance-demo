@@ -20,18 +20,22 @@ const ResponsiveComponent: React.FC<Props> = ({
   email,
 }) => {
   return (
-    <div className="relative h-[80dvh] w-[98dvw] max-w-4xl rounded-xl p-2 px-6 text-sm sm:text-base md:max-h-[60dvh] md:w-[50dvw] md:text-lg lg:text-xl xl:text-2xl">
+    <div className="relative h-[80dvh] w-[98dvw] max-w-4xl rounded-xl bg-neutral-950 p-2 px-6 text-sm sm:text-base md:max-h-[60dvh] md:w-[50dvw] md:text-lg lg:text-xl xl:text-2xl">
       {/* Glassmorphism Background */}
       {/* <div className="absolute inset-0 bg-neutral-950 backdrop-blur-3xl"></div> */}
 
-      <div className="relative overflow-hidden rounded-xl bg-neutral-950 px-6 py-24 text-center opacity-70 shadow-2xl ring-1 ring-yellow-500 sm:rounded-3xl sm:px-16">
-        <Image
-          src={imageUrl!}
-          alt="Background"
-          quality={75}
-          fill={true}
-          className="-z-10 object-cover opacity-20"
-        />
+      <div className="relative overflow-hidden rounded-xl bg-slate-900 px-6 py-24 text-center opacity-70 shadow-2xl ring-1 ring-yellow-500 sm:rounded-3xl sm:px-16">
+        {imageUrl && (
+          <Image
+            src={imageUrl}
+            alt="Background"
+            quality={75}
+            // sizes=""
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            fill={true}
+            className="-z-10 object-cover opacity-20"
+          />
+        )}
         <h2 className="mx-auto max-w-2xl text-2xl font-bold text-yellow-600 sm:text-xl">
           {title}
         </h2>

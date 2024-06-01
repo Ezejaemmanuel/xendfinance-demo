@@ -11,19 +11,13 @@ const TimeLineComponent = () => {
 
   return (
     <div>
-      <main>
-        {isSmallScreen
-          ? timelines.map((timeline, index) => (
-              <TimelineSmall key={index} index={index} data={timeline} />
-            ))
-          : timelines.map((timeline, index) => (
-              <TimelineLarge key={index} index={index} data={timeline} />
-            ))}
-      </main>
-
-      <footer className="py-8 text-center">
-        <p>© 2024 Xend Finance. All rights reserved.</p>
-      </footer>
+      {isSmallScreen
+        ? timelines.map((timeline, index) => (
+            <TimelineSmall key={index} index={index} data={timeline} />
+          ))
+        : timelines.map((timeline, index) => (
+            <TimelineLarge key={index} index={index} data={timeline} />
+          ))}
     </div>
   );
 };

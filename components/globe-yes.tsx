@@ -156,7 +156,7 @@ const World = () => {
 
   return (
     <Globe
-      globeImageUrl="https://unpkg.com/three-globe@2.31.0/example/img/earth-night.jpg" // Use a more modern globe image
+      globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg" // Use a more modern globe image
       ref={useCallback<any>(globeEl, [])}
       //   showAtmosphere={true}
       backgroundColor="black"

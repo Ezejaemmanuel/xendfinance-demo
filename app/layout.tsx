@@ -21,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className=" !scroll-smooth">
       <ReactGeiger>
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
@@ -34,7 +34,7 @@ export default function RootLayout({
               <ProvidersProgressBar>
                 <main className="">
                   <Navbar />
-                  <div className="mb-10 bg-black md:mb-0">{children}</div>
+                  <div className="mb-10 bg-transparent md:mb-0">{children}</div>
                   <Toaster richColors duration={10000} />
                 </main>
               </ProvidersProgressBar>
