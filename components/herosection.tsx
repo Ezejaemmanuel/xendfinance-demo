@@ -22,7 +22,7 @@ const HeroSection = () => {
       <Suspense>
         <Meteors number={30} />
       </Suspense>
-      <div className="absolute inset-0 h-20 w-20 rounded-full bg-[radial-gradient(circle_at_center,_rgba(255,165,0,0.8),_transparent)]"></div>
+      {/* <div className="absolute inset-0 h-20 w-20 rounded-full bg-[radial-gradient(circle_at_center,_rgba(255,165,0,0.8),_transparent)]"></div> */}
       {/* <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide z-10">
         Revolutionizing Finance with
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </h1>
         </div>{" "}
         Finance with
-        <span className="bg-gradient-to-r from-orange-500 to-red-800 bg-clip-text text-transparent">
+        <span className=" bg-gradient-to-r from-violet-900 via-rose-500 to-emerald-400 bg-clip-text text-transparent">
           {" "}
           Cryptocurrency-backed Real World Assets (RWA)
         </span>

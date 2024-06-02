@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
+  { label: "Products", href: "/products" },
+  { label: "Developer", href: "/developer" },
   { label: "Pricing", href: "#" },
   { label: "Testimonials", href: "#" },
 ];
