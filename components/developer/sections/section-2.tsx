@@ -14,7 +14,7 @@ const Section2: React.FC = () => {
   };
 
   return (
-    <section className="body-font mx-auto flex max-w-[99dvw] flex-col items-center justify-center overflow-hidden bg-neutral-950 py-6 text-gray-600 dark:bg-neutral-950 md:max-w-[90dvw] md:py-0 lg:max-w-[80dvw]">
+    <section className="body-font mx-auto flex max-w-[99dvw] flex-col items-center justify-center overflow-hidden bg-neutral-950 py-6 text-gray-600 dark:bg-neutral-950 md:max-w-[96dvw] md:py-0 lg:max-w-[95dvw]">
       <div
         className={`container mx-auto flex items-center overflow-hidden px-5 ${section.reverse ? "flex-col md:flex-row" : "flex-col-reverse md:flex-row-reverse"}`}
       >
