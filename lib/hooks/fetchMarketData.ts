@@ -14,6 +14,7 @@ export const fetchMarketData = async ({
 
   if (!response.ok) {
     const errorData = await response.json();
+    
 
     throw new Error(
       errorData.error || "An Error Occured in the market cap query"
