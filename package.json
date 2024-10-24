@@ -44,7 +44,7 @@
     "framer-motion": "^11.2.6",
     "lucide-react": "^0.379.0",
     "nanoid": "^5.0.7",
-    "next": "14.2.3",
+    "next": "14.2.10",
     "next-nprogress-bar": "^2.3.12",
     "next-themes": "^0.3.0",
     "postgres": "^3.4.4",
